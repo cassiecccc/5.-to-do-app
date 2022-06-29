@@ -1,0 +1,302 @@
+@import "general";
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.wrapper {
+  width: 1440px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  background-color: hsl(0, 0, 98);
+}
+
+button {
+  color: $dark-grayish-blue;
+}
+
+header {
+  background-image: url(../images/bg-desktop-light.jpg);
+  width: 1440px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  .logo {
+    width: 540px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 40px;
+      color: $white;
+      letter-spacing: 0.5em;
+      font-weight: $bold;
+    }
+
+    .theme {
+      width: 26px;
+      height: 26px;
+      border: none;
+      background: url(../images/icon-moon.svg);
+      background-size: 26px 26px;
+    }
+  }
+
+  .input-wrapper {
+    width: 540px;
+    height: 3em;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    padding: 0 1em;
+    margin-top: -2em;
+
+    input {
+      width: 540px;
+      height: 2em;
+      border: none;
+      background-color: transparent;
+      font-size: 18px;
+      font-family: "Josefin Sans", sans-serif;
+      color: $very-dark-grayish-blue;
+    }
+
+    input::placeholder {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 18px;
+      color: $dark-grayish-blue;
+    }
+
+    input:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.check-button {
+  padding: 0.8em;
+  border: 1px solid $very-light-grayish-blue;
+  border-radius: 50%;
+  background: none;
+  margin-right: 1.9em;
+  cursor: pointer;
+}
+
+main {
+  width: 540px;
+  min-height: 440px;
+  max-height: auto;
+  background-color: $white;
+  margin-top: -3.5rem;
+  border-radius: 5px;
+  box-shadow: 0px 20px 40px -10px hsl(0, 0, 85);
+  z-index: 1;
+}
+
+.list-wrapper {
+  min-height: 410px;
+  max-height: 410px;
+  overflow: scroll;
+}
+
+.list {
+  width: 540px;
+
+  padding: 0;
+  color: $very-dark-grayish-blue;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  border-bottom: 1px solid $very-light-grayish-blue;
+  .list-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  svg {
+    display: none;
+    stroke: #494c6b;
+  }
+}
+
+.list:hover {
+  svg {
+    display: block;
+  }
+}
+
+.status {
+  width: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1em 1.5em;
+  font-size: 14px;
+  color: $dark-grayish-blue;
+  .item-count {
+    cursor: default;
+  }
+
+  .status-mid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .status-button {
+    border: none;
+    background-color: transparent;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: $bold;
+    cursor: pointer;
+  }
+
+  .status-button:hover {
+    color: $very-dark-grayish-blue;
+  }
+
+  .status-button:active,
+  .status-button:focus {
+    color: $bright-blue;
+  }
+}
+
+.clear-button {
+  border: none;
+  background-color: transparent;
+  font-family: "Josefin Sans", sans-serif;
+  color: $dark-grayish-blue;
+  cursor: pointer;
+  width: 120px;
+}
+
+.clear-button:hover {
+  color: $very-dark-grayish-blue;
+}
+
+footer {
+  margin-top: 3.5em;
+  font-size: 14px;
+  color: $dark-grayish-blue;
+  z-index: 2;
+}
+
+//dark theme
+
+.dark-theme {
+  background-color: black;
+}
+
+.dark-theme > header {
+  background-image: url(../images/bg-desktop-dark.jpg);
+}
+
+.dark-theme > header > .logo > .theme {
+  background: url(../images/icon-sun.svg);
+  background-repeat: no-repeat;
+  background-size: 26px 26px;
+}
+
+.dark-theme > header > .input-wrapper {
+  background-color: $very-dark-desaturated-blue;
+}
+
+.dark-theme > header > .input-wrapper > input {
+  color: $light-grayish-blue;
+}
+
+.dark-theme > main {
+  background-color: $very-dark-desaturated-blue;
+  box-shadow: none;
+}
+
+.dark-theme {
+  .list-left {
+    p {
+      color: $light-grayish-blue;
+    }
+  }
+}
+
+.dark-theme {
+  .list {
+    border-bottom: 1px solid $very-dark-grayish-blue-stroke;
+    svg {
+      stroke: #5b5e7e;
+    }
+  }
+}
+
+.dark-theme {
+  .check-button {
+    border: 1px solid $very-dark-grayish-blue-stroke;
+  }
+}
+
+.dark-theme > main > .status > .status-mid > .status-button:hover {
+  color: $light-grayish-blue-hover;
+}
+
+.dark-theme > main > .status > .status-mid > .status-button:active,
+.dark-theme > main > .status > .status-mid > .status-button:focus {
+  color: $bright-blue;
+}
+
+.dark-theme > main > .status > .clear-button:hover {
+  color: $light-grayish-blue-hover;
+}
+
+.dark-theme > footer {
+  color: $very-dark-grayish-blue;
+}
+
+//JS active class
+
+.check-active {
+  background-image: $check-background;
+  padding: 0.19em 0.38em;
+}
+
+.check-active::after {
+  content: url(../images/icon-check.svg);
+}
+
+.list-active > .list-left > p {
+  text-decoration: line-through;
+}
+
+.list-active > .list-left > .check-button {
+  background-image: $check-background;
+  padding: 0.19em 0.38em;
+}
+
+.list-active > .list-left > .check-button::after {
+  content: url(../images/icon-check.svg);
+}
+
+.status-active {
+  color: $bright-blue;
+}

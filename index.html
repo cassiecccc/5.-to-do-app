@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script type="module" src="script.js" defer></script>
+    <title>To Do App || Project</title>
+  </head>
+  <body>
+    <div data-wrapper class="wrapper">
+      <header>
+        <div class="logo">
+          <h1>todo</h1>
+          <button data-theme-switcher class="theme"></button>
+        </div>
+        <div class="input-wrapper">
+          <button data-input-button class="check-button"></button>
+          <input data-input type="text" placeholder="Create a new todo..." />
+        </div>
+      </header>
+      <main>
+        <div data-list-wrapper class="list-wrapper">
+          <!-- <div class="list">
+            <div class="list-left">
+              <button class="check-button"></button>
+              <p>Complete online Javascript course</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+              <path
+                fill="#D8D8D8"
+                fill-rule="evenodd"
+                d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+              />
+            </svg>
+          </div> -->
+        </div>
+        <div class="status">
+          <p class="item-count"><span data-item-count>0</span> items left</p>
+          <div class="status-mid">
+            <button status-all class="status-button">All</button>
+            <button status-active class="status-button">Active</button>
+            <button status-completed class="status-button">Completed</button>
+          </div>
+          <button data-clear-completed class="clear-button">Clear Completed</button>
+        </div>
+      </main>
+      <footer>Drap and drop to reorder list</footer>
+    </div>
+  </body>
+  <template data-list-template>
+    <div data-list class="list">
+      <div class="list-left">
+        <button data-check-button class="check-button"></button>
+        <p data-list-input>Complete online Javascript course</p>
+      </div>
+      <svg data-delete xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+        <path
+          fill="#D8D8D8"
+          fill-rule="evenodd"
+          d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"
+        />
+      </svg>
+    </div>
+  </template>
+</html>
